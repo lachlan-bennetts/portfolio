@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
-import { SectionHeader } from "./SectionHeading";
+import { SectionHeader } from "../common/SectionHeading";
 
 
 function AboutMe() {
   return (
     <Box sx={{width: '100%'}}>
       <Box>
-      <SectionHeader text='Who am I?' />
+      <SectionHeader coloured='Who am I?' />
         <p>
           The road I have taken into software engineering hasn't been conventional at all. I have worked across
           a range of different front-facing, non-technical and technical roles within my career that have gifted me a strong, unique

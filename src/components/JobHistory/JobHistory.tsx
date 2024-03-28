@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
-import { SectionHeader } from './SectionHeading';
+import { SectionHeader } from '../../common/SectionHeading';
 import { JobDescription } from './JobDescription';
+import styled from 'styled-components'
 
 
 export function JobHistory() {
@@ -79,17 +80,25 @@ export function JobHistory() {
   const jobHistory = (jobs: JobInfo[]) => {
     return (
       <>
-        {jobs.map((job) => {
-          return <JobDescription role={job.role} company={job.company} duration={job.duration} dotPoints={job.achievements} />
+        {jobs.map((job, index) => {
+          return <JobDescription role={job.role} company={job.company} duration={job.duration} dotPoints={job.achievements} key={index}/>
         })}
       </>
     )
   }
 
   return(
-    <Box>
-      <SectionHeader text='Work History' />
-      {jobHistory([optus, als, cwh, realEstate])}
-    </Box>
+    <Container>
+      <SectionHeader plain='My Work History' />
+      <div className='history-card'>
+        {jobHistory([optus, als, cwh, realEstate])}
+      </div>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  width: 80%;
+  max-width: 1280px;
+  margin: auto;
+`

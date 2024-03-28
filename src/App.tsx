@@ -2,16 +2,21 @@ import { Box } from '@mui/material'
 import './App.css'
 import AboutMe from './components/AboutMe'
 import ResponsiveAppBar from './components/AppBar'
-import { JobHistory } from './components/JobHistory'
+import { JobHistory } from './components/JobHistory/JobHistory'
+import Projects from './components/Projects/Projects'
+import { GradientBackground } from './common/Gradient'
+import { Testimonials } from './components/Testimonials/Testimonials'
 
 function App() {
 
   return (
     <>
       <ResponsiveAppBar />
-      <Box sx={{width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
         <JobHistory />
-      </Box>
+        <GradientBackground>
+          <Projects />
+          <Testimonials />
+        </GradientBackground>
     </>
   )
 }
